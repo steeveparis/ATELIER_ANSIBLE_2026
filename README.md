@@ -28,7 +28,7 @@ Vous allez dans cette séquence mettre en place votre environnement et les logic
 **Installation de Ansible et Nginx**  
 ```
 sudo apt update
-sudo apt install -y ansible nginx
+sudo apt install -y ansible nginx curl
 ```
 **Vérifier l’environnement**  
 ```
