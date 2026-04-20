@@ -90,27 +90,54 @@ Faites preuve de pédagogie et soyez clair dans vos explications et procedures d
 **Question 1 :**  
 Pourquoi Ansible est-il qualifié d’outil "déclaratif" ?    
   
-*..Répondez à cet exercice ici..*
+Ansible est dit déclaratif parce qu’on ne donne pas une suite de commandes à exécuter, mais plutôt le résultat qu’on veut obtenir.
+Par exemple, on dit que Nginx doit être installé et démarré, et Ansible se débrouille pour que ce soit le cas.
+
+Du coup, on ne se concentre pas sur “comment faire”, mais sur “ce qu’on veut à la fin”.
+Ça rend les déploiements plus simples et surtout répétables sans erreur.
 
 **Question 2 :**  
 Pourquoi l’utilisation de variables est-elle essentielle dans un playbook ?  
   
-*..Répondez à cet exercice ici..*
+Les variables permettent de ne pas écrire des valeurs en dur partout.
+Par exemple, au lieu d’écrire directement le titre ou le nom de l’auteur dans le HTML, on utilise des variables comme page_title ou author.
 
 **Question 3 :**  
 En quoi Ansible facilite-t-il la gestion de plusieurs serveurs ?  
   
-*..Répondez à cet exercice ici..*
+Avec Ansible, on peut appliquer le même playbook à plusieurs machines en même temps.
+
+Au lieu de configurer chaque serveur à la main, on écrit une seule fois les règles, et Ansible les applique partout via l’inventaire.
 
 **Question 4 :**  
 Quels sont les avantages et les limites d’Ansible dans un contexte DevOps ?   
   
-*..Répondez à cet exercice ici..*
+Avantages :
+automatisation des tâches
+déploiements reproductibles
+facile à lire et à comprendre
+pas besoin d’agent sur les machines
+Limites :
+moins adapté pour créer l’infrastructure (là on utilise Terraform)
+peut devenir compliqué sur de très gros projets si mal organisé
+
+En pratique, on utilise souvent Terraform + Ansible :
+
+Terraform → crée les machines
+Ansible → configure les machines
   
 **Question 5 :**  
 Quelle est la différence entre les modules copy et template dans Ansible ?   
   
-*..Répondez à cet exercice ici..*
+copy : copie un fichier tel quel
+template : copie un fichier en remplaçant les variables
+
+Dans ton cas :
+
+copy → ne marche pas avec {{ page_title }}
+template → remplace les variables automatiquement
+
+Donc dès qu’il y a des variables → on utilise template
 
 ---------------------------------------------------
 Séquence 5 : Atelier  
