@@ -1,6 +1,6 @@
 ---
 - name: Atelier Ansible dans GitHub Codespaces - version durcie avec remédiation
-  hosts: local
+  hosts: all
   become: true
   gather_facts: true
 
@@ -9,9 +9,9 @@
     yarn_repo_file: /etc/apt/sources.list.d/yarn.list
     yarn_repo_disabled_file: /etc/apt/sources.list.d/yarn.list.disabled
 
-    page_title: "Serveur deployer aves Ansible"
-    author: "PARIS"
-    app_user: "STEEVE"
+    #page_title: "Serveur deployer aves Ansible"
+    #author: "PARIS"
+    #app_user: "STEEVE"
   tasks:
     - name: Afficher le système cible
       debug:
